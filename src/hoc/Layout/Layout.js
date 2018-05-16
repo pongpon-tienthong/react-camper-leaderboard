@@ -1,9 +1,10 @@
 import React from "react";
 import Aux from "../Aux/Aux";
+import Header from '../../components/Header/Header';
 
 const layout = props => (
   <Aux>
-    <div>Header</div>
+    <Header />
     <main>{props.children}</main>
     <div>Footer</div>
   </Aux>
