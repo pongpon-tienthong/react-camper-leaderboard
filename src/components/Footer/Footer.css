@@ -1,19 +1,19 @@
-.Header {
-  height: 50px;
+.Footer {
   width: 100%;
+  height: 40px;
   position: fixed;
-  top: 0;
   left: 0;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #006400;
   box-sizing: border-box;
   z-index: 90;
+  background-color: #006400;
+  color: white;
 }
 
-.Header img {
+.Footer p {
+  text-align: center;
   margin: auto;
-  width: 50%;
-  height: 50%;
 }
