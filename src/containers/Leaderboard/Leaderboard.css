@@ -1,0 +1,18 @@
+.Leaderboard {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.Leaderboard h2 {
+  color: white;
+  width: 100%;
+  padding: 7px;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #006400;
+  border-radius: 3px 3px 0 0;
+  border: 2px solid #006400;
+}

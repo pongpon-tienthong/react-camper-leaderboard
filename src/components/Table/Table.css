@@ -1,0 +1,36 @@
+.Table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 2px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 18px;
+  border-bottom-width: 3px;
+}
+
+.CenterText {
+  text-align: center;
+}
