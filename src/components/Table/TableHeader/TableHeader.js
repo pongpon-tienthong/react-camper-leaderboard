@@ -6,8 +6,12 @@ const tableHeader = props => (
     <tr>
       <th>#</th>
       <th>Camper Name</th>
-      <th className={styles.CenterText}>Points in past 30 days</th>
-      <th className={styles.CenterText}>All time points</th>
+      <th className={styles.Sortable} onClick={props.recent}>
+        Points in past 30 days
+      </th>
+      <th className={styles.Sortable} onClick={props.alltime}>
+        All time points
+      </th>
     </tr>
   </thead>
 );

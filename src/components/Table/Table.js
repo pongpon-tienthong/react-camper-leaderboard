@@ -6,20 +6,39 @@ import axios from "../../axios-score";
 
 class Table extends Component {
   state = {
-    allTimeTop: null,
-    recentTop: null
+    recentTopScoreUsers: null,
+    allTimeTopScoreUsers: null,
+    users: null
   };
 
   componentDidMount() {
-    axios.get("/recent").then(res => {
-      this.setState({ recentTop: res.data });
-    });
+    if (!this.state.recentTopScoreUsers) {
+      axios.get("/recent").then(res => {
+        this.setState({ recentTopScoreUsers: res.data });
+        this.setState({ users: this.state.recentTopScoreUsers });
+      });
+    }
   }
 
+  recentTopScoreHandler = () => {
+    this.setState({ users: this.state.recentTopScoreUsers });
+  };
+
+  allTimeTopScoreHandler = () => {
+    if (!this.state.allTimeTopScoreUsers) {
+      axios.get("/alltime").then(res => {
+        this.setState({ allTimeTopScoreUsers: res.data });
+        this.setState({ users: res.data });
+      });
+    } else {
+      this.setState({ users: this.state.allTimeTopScoreUsers });
+    }
+  };
+
   render() {
-    let recentTop = null;
-    if (this.state.recentTop) {
-      recentTop = this.state.recentTop.map((usr, i) => (
+    let users = null;
+    if (this.state.users) {
+      users = this.state.users.map((usr, i) => (
         <tr key={`${usr.username}_${i + 1}`}>
           <td>{i + 1}</td>
           <td>
@@ -40,8 +59,11 @@ class Table extends Component {
 
     return (
       <table className={styles.Table}>
-        <TableHeader />
-        <TableContent>{recentTop}</TableContent>
+        <TableHeader
+          recent={this.recentTopScoreHandler}
+          alltime={this.allTimeTopScoreHandler}
+        />
+        <TableContent>{users}</TableContent>
       </table>
     );
   }

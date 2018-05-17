@@ -42,9 +42,16 @@ th {
   border-bottom-width: 3px;
 }
 
+.Sortable {
+  text-align: center;
+  color: #336033;
+  text-decoration: underline;
+}
+
 .CenterText {
   text-align: center;
 }
+
 .Userimg {
   width: 40px;
   border: 2px solid #006400;
