@@ -17,13 +17,21 @@ class Table extends Component {
   }
 
   render() {
-    
     let recentTop = null;
     if (this.state.recentTop) {
       recentTop = this.state.recentTop.map((usr, i) => (
         <tr key={`${usr.username}_${i + 1}`}>
           <td>{i + 1}</td>
-          <td>{usr.username}</td>
+          <td>
+            <a href={`https://www.freecodecamp.org/${usr.username}`}>
+              <img
+                className={styles.Userimg}
+                src={usr.img}
+                alt={usr.username}
+              />
+              {usr.username}
+            </a>
+          </td>
           <td className={styles.CenterText}>{usr.recent}</td>
           <td className={styles.CenterText}>{usr.alltime}</td>
         </tr>

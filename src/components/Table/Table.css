@@ -1,6 +1,18 @@
 .Table {
   border-collapse: collapse;
   width: 100%;
+  font-size: 18px;
+}
+
+.Table a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.Table a:focus,
+.Table a:hover {
+  color: #23527c;
+  text-decoration: underline;
 }
 
 td,
@@ -27,10 +39,17 @@ th {
   text-align: left;
   background-color: #f0f0f0;
   color: #333;
-  font-size: 18px;
   border-bottom-width: 3px;
 }
 
 .CenterText {
   text-align: center;
+}
+.Userimg {
+  width: 40px;
+  border: 2px solid #006400;
+  border-radius: 4px;
+  max-height: 40px;
+  margin-right: 4px;
+  vertical-align: middle;
 }
