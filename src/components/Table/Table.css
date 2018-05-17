@@ -48,6 +48,11 @@ th {
   text-decoration: underline;
 }
 
+.Selected::after {
+  content: " ▼";
+  font-size: 14px;
+}
+
 .CenterText {
   text-align: center;
 }

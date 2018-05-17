@@ -8,7 +8,8 @@ class Table extends Component {
   state = {
     recentTopScoreUsers: null,
     allTimeTopScoreUsers: null,
-    users: null
+    users: null,
+    selected: "recent"
   };
 
   componentDidMount() {
@@ -21,17 +22,26 @@ class Table extends Component {
   }
 
   recentTopScoreHandler = () => {
-    this.setState({ users: this.state.recentTopScoreUsers });
+    this.setState({
+      users: this.state.recentTopScoreUsers,
+      selected: "recent"
+    });
   };
 
   allTimeTopScoreHandler = () => {
     if (!this.state.allTimeTopScoreUsers) {
       axios.get("/alltime").then(res => {
-        this.setState({ allTimeTopScoreUsers: res.data });
-        this.setState({ users: res.data });
+        this.setState({
+          allTimeTopScoreUsers: res.data,
+          users: res.data,
+          selected: "allTime"
+        });
       });
     } else {
-      this.setState({ users: this.state.allTimeTopScoreUsers });
+      this.setState({
+        users: this.state.allTimeTopScoreUsers,
+        selected: "allTime"
+      });
     }
   };
 
@@ -62,6 +72,7 @@ class Table extends Component {
         <TableHeader
           recent={this.recentTopScoreHandler}
           alltime={this.allTimeTopScoreHandler}
+          selected={this.state.selected}
         />
         <TableContent>{users}</TableContent>
       </table>
