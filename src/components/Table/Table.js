@@ -52,7 +52,10 @@ class Table extends Component {
         <tr key={`${usr.username}_${i + 1}`}>
           <td>{i + 1}</td>
           <td>
-            <a href={`https://www.freecodecamp.org/${usr.username}`}>
+            <a
+              href={`https://www.freecodecamp.org/${usr.username}`}
+              target="_blank"
+            >
               <img
                 className={styles.Userimg}
                 src={usr.img}

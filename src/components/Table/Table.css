@@ -2,6 +2,7 @@
   border-collapse: collapse;
   width: 100%;
   font-size: 18px;
+  border: 1px solid #351f0b;
 }
 
 .Table a {
@@ -17,7 +18,7 @@
 
 td,
 th {
-  border: 2px solid #ddd;
+  border: 1px solid #ddd;
   padding: 8px;
 }
 
